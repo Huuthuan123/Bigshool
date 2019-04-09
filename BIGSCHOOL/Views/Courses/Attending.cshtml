@@ -1,7 +1,10 @@
 ﻿@model BIGSCHOOL.ViewModels.CoursesViewModel
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Attending";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<h2>Attending</h2>
 <div class="row">
     <ul class="course">
         @foreach (var course in Model.UpcommingCourses)
@@ -20,9 +23,9 @@
                         @course.Lecturer.Name
                         @if (Model.ShowAction)
                         {
-                        <button class="btn btn-default btn-sm js-toggle-follow" data-user-id="@course.LecturerId">Follow</button>
+                            <button class="btn btn-default btn-sm js-toggle-follow" data-user-id="@course.LecturerId">Follow</button>
                         }
-                        
+
                     </span>
                     <span class="category">
                         @course.Category.Name
@@ -31,7 +34,7 @@
                     {
                         <button data-course-id="@course.Id" class="btn btn-default btn-sm js-toggle-attendace">Going?</button>
                     }
-                    
+
                 </div>
             </li>
         }
@@ -95,5 +98,3 @@
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
-
-
